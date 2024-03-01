@@ -1,0 +1,39 @@
+#include <stdio.h>
+
+int main() {
+    // Exibição do menu
+    printf("Menu:\n");
+    printf("1. Lasanha - R$ 20.00\n");
+    printf("2. Frango Grelhado - R$ 15.00\n");
+    printf("3. Sopa de Legumes - R$ 10.00\n");
+    printf("4. Pizza Margherita - R$ 18.00\n");
+    printf("5. Sair\n");
+
+    // Solicitação da escolha do prato
+    printf("Escolha o prato desejado (1-5): ");
+    int escolha;
+    scanf("%d", &escolha);
+
+    // Verificação da escolha
+    switch (escolha) {
+        case 1:
+            printf("Prato escolhido: Lasanha - R$ 20.00\n");
+            break;
+        case 2:
+            printf("Prato escolhido: Frango Grelhado - R$ 15.00\n");
+            break;
+        case 3:
+            printf("Prato escolhido: Sopa de Legumes - R$ 10.00\n");
+            break;
+        case 4:
+            printf("Prato escolhido: Pizza Margherita - R$ 18.00\n");
+            break;
+        case 5:
+            printf("Saindo do menu.\n");
+            break;
+        default:
+            printf("Opção inválida.\n");
+    }
+
+    return 0;
+}
