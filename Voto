@@ -1,0 +1,19 @@
+#include <stdio.h>
+
+int main() {
+    // Declaração de variáveis
+    int idade;
+
+    // Entrada de dados
+    printf("Informe sua idade: ");
+    scanf("%d", &idade);
+
+    // Verificação da obrigatoriedade de voto
+    if (idade >= 18 && idade <= 65) {
+        printf("Você é obrigado(a) a votar.\n");
+    } else {
+        printf("Você não é obrigado(a) a votar.\n");
+    }
+
+    return 0;
+}
