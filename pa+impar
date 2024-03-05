@@ -1,0 +1,24 @@
+#include <stdio.h>
+
+// Função para verificar se um número é par ou ímpar
+void verificarParImpar(int numero) {
+    if (numero % 2 == 0) {
+        printf("%d é um número par.\n", numero);
+    } else {
+        printf("%d é um número ímpar.\n", numero);
+    }
+}
+
+int main() {
+    // Variável
+    int numero;
+
+    // Solicitação da entrada do usuário
+    printf("Informe um número: ");
+    scanf("%d", &numero);
+
+    // Chamada da função para verificar se o número é par ou ímpar
+    verificarParImpar(numero);
+
+    return 0;
+}
