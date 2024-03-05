@@ -1,0 +1,28 @@
+#include <stdio.h>
+#include <locale.h>
+#include <stdlib.h>
+// Função para calcular a média de dois números
+float calcularMedia(float num1, float num2) {
+    return (num1 + num2) / 2.0;
+}
+
+int main() {
+		setlocale(LC_ALL, "Portuguese");
+    // Variáveis
+    float numero1, numero2;
+
+    // Solicitação da entrada do usuário
+    printf("Informe o primeiro número: ");
+    scanf("%f", &numero1);
+
+    printf("Informe o segundo número: ");
+    scanf("%f", &numero2);
+
+    // Chamada da função para calcular a média
+    float media = calcularMedia(numero1, numero2);
+
+    // Exibição da mensagem com a média
+    printf("A média dos números %.2f e %.2f é: %.2f\n", numero1, numero2, media);
+
+    return 0;
+}
