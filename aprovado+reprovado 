@@ -1,0 +1,33 @@
+#include <stdio.h>
+
+int main() {
+    // Variáveis
+    float nota;
+    float soma = 0;
+
+    // Laço para solicitar 3 notas
+    for (int i = 1; i <= 3; i++) {
+        printf("Informe a %da nota: ", i);
+        scanf("%f", &nota);
+
+        // Adiciona a nota à soma
+        soma += nota;
+    }
+
+    // Calcula a média
+    float media = soma / 3;
+
+    // Exibe a média
+    printf("A média das notas é: %.2f\n", media);
+
+    // Verifica se o aluno está aprovado, em recuperação ou reprovado
+    if (media >= 7) {
+        printf("Aluno aprovado!\n");
+    } else if (media >= 4) {
+        printf("Aluno em recuperação.\n");
+    } else {
+        printf("Aluno reprovado.\n");
+    }
+
+    return 0;
+}
