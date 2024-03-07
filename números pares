@@ -1,0 +1,13 @@
+#include <stdio.h>
+
+int main() {
+    // Laço para percorrer os números de 100 a 120
+    for (int i = 100; i <= 120; i++) {
+        // Verifica se o número é par
+        if (i % 2 == 0) {
+            printf("%d\n", i); // Exibe o número par
+        }
+    }
+
+    return 0;
+}
