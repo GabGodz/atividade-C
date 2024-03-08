@@ -1,0 +1,38 @@
+#include <stdio.h>
+
+int main() {
+    // Variáveis
+    float nota1, nota2;
+
+    do {
+        // Solicita a primeira nota ao usuário
+        printf("Informe a primeira nota (entre 0 e 10): ");
+        scanf("%f", &nota1);
+
+        // Verifica se a primeira nota está no intervalo válido
+        if (nota1 < 0 || nota1 > 10) {
+            printf("Nota inválida. ");
+        }
+
+    } while (nota1 < 0 || nota1 > 10);
+
+    do {
+        // Solicita a segunda nota ao usuário
+        printf("Informe a segunda nota (entre 0 e 10): ");
+        scanf("%f", &nota2);
+
+        // Verifica se a segunda nota está no intervalo válido
+        if (nota2 < 0 || nota2 > 10) {
+            printf("Nota inválida. ");
+        }
+
+    } while (nota2 < 0 || nota2 > 10);
+
+    // Calcula a média aritmética
+    float media = (nota1 + nota2) / 2;
+
+    // Exibe a média aritmética
+    printf("A média aritmética é: %.2f\n", media);
+
+    return 0;
+}
