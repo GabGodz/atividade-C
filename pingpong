@@ -1,0 +1,58 @@
+#include <stdio.h>
+#include <conio.h>
+#include <unistd.h>
+
+#define LINHAS 10
+#define COLUNAS 20
+
+int main() {
+    int bola_x = COLUNAS / 2, bola_y = LINHAS / 2; // posição inicial da bola
+    int direcao_x = 1, direcao_y = 1; // direção inicial da bola
+    int jogador_x = 1, jogador_y = LINHAS / 2; // posição inicial do jogador
+
+    int input;
+    while (1) {
+        // Limpa a tela
+        system("cls");
+
+        // Desenha o campo
+        for (int i = 0; i < LINHAS; i++) {
+            for (int j = 0; j < COLUNAS; j++) {
+                if (i == 0 || i == LINHAS - 1) {
+                    printf("-");
+                } else if ((i == jogador_y && j == jogador_x) || (i == bola_y && j == bola_x)) {
+                    printf("*");
+                } else {
+                    printf(" ");
+                }
+            }
+            printf("\n");
+        }
+
+        // Verifica a entrada do usuário
+        if (_kbhit()) {
+            input = _getch();
+            if (input == 'w') {
+                if (jogador_y > 1) jogador_y--;
+            } else if (input == 's') {
+                if (jogador_y < LINHAS - 2) jogador_y++;
+            }
+        }
+
+        // Atualiza a posição da bola
+        bola_x += direcao_x;
+        bola_y += direcao_y;
+
+        // Verifica colisão com as paredes
+        if (bola_x <= 0 || bola_x >= COLUNAS - 1) direcao_x = -direcao_x;
+        if (bola_y <= 0 || bola_y >= LINHAS - 1) direcao_y = -direcao_y;
+
+        // Verifica colisão com o jogador
+        if (bola_x == jogador_x && bola_y == jogador_y) direcao_x = -direcao_x;
+
+        // Delay para controlar a velocidade do jogo
+        usleep(50000);
+    }
+
+    return 0;
+}
