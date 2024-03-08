@@ -1,0 +1,23 @@
+#include <stdio.h>
+
+int main() {
+    // Variável
+    float nota;
+
+    do {
+        // Solicita a nota ao usuário
+        printf("Informe a nota do aluno (entre 0 e 10): ");
+        scanf("%f", &nota);
+
+        // Verifica se a nota está no intervalo válido
+        if (nota < 0 || nota > 10) {
+            printf("Nota inválida. ");
+        }
+
+    } while (nota < 0 || nota > 10);
+
+    // Exibe a nota informada pelo usuário
+    printf("Nota informada: %.2f\n", nota);
+
+    return 0;
+}
