@@ -1,0 +1,41 @@
+#include <stdio.h>
+
+int main() {
+    // Variáveis
+    float nota, soma = 0;
+    char resposta;
+    int contador = 0;
+
+    // Loop para inserção de notas
+    do {
+        // Solicitação e validação da nota
+        do {
+            printf("Informe a nota (entre 0 e 10): ");
+            scanf("%f", &nota);
+
+            if (nota < 0 || nota > 10) {
+                printf("Nota inválida. ");
+            }
+
+        } while (nota < 0 || nota > 10);
+
+        // Adiciona a nota à soma
+        soma += nota;
+
+        // Incrementa o contador
+        contador++;
+
+        // Pergunta ao usuário se deseja inserir mais uma nota
+        printf("Deseja inserir mais uma nota? (S para sim, N para não): ");
+        scanf(" %c", &resposta);
+
+    } while (resposta == 'S' || resposta == 's');
+
+    // Calcula a média aritmética
+    float media = soma / contador;
+
+    // Exibe a média aritmética
+    printf("A média aritmética das notas é: %.2f\n", media);
+
+    return 0;
+}
