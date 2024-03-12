@@ -1,0 +1,47 @@
+#include <stdio.h>
+
+int main() {
+    int numero;
+    int soma_pares = 0, quantidade_pares = 0;
+    int soma_total = 0, quantidade_total = 0;
+
+    // Loop para a leitura dos números
+    while (1) {
+        // Solicitação do usuário para inserir um número
+        printf("Informe um número inteiro positivo (ou zero para encerrar): ");
+        scanf("%d", &numero);
+
+        // Verifica se o número é zero para encerrar o loop
+        if (numero == 0) {
+            break;
+        }
+
+        // Verifica se o número é par
+        if (numero % 2 == 0) {
+            soma_pares += numero;
+            quantidade_pares++;
+        }
+
+        // Soma o número à média geral
+        soma_total += numero;
+        quantidade_total++;
+    }
+
+    // Verifica se pelo menos um número foi inserido
+    if (quantidade_total > 0) {
+        // Calcula as médias
+        float media_pares = quantidade_pares > 0 ? (float)soma_pares / quantidade_pares : 0;
+        float media_total = (float)soma_total / quantidade_total;
+
+        // Exibe os resultados
+        printf("Quantidade de números pares: %d\n", quantidade_pares);
+        printf("Quantidade de números ímpares: %d\n", quantidade_total - quantidade_pares);
+        printf("Média dos valores pares: %.2f\n", media_pares);
+        printf("Média geral dos números lidos: %.2f\n", media_total);
+    } else {
+        // Caso nenhum número tenha sido inserido
+        printf("Nenhum número inserido. Impossível calcular as médias.\n");
+    }
+
+    return 0;
+}
