@@ -1,0 +1,33 @@
+#include <stdio.h>
+
+int main() {
+    int numero, soma = 0, quantidade = 0;
+
+    // Loop de repetição while
+    while (1) {
+        // Solicitação do usuário para inserir um número
+        printf("Informe um valor inteiro positivo (ou um valor negativo para encerrar): ");
+        scanf("%d", &numero);
+
+        // Verifica se o número é negativo para encerrar o loop
+        if (numero < 0) {
+            break;
+        }
+
+        // Soma o número à variável soma e incrementa a quantidade
+        soma += numero;
+        quantidade++;
+    }
+
+    // Verifica se pelo menos um número foi inserido
+    if (quantidade > 0) {
+        // Calcula e exibe a média aritmética
+        float media = (float)soma / quantidade;
+        printf("A média aritmética dos valores é: %.2f\n", media);
+    } else {
+        // Caso nenhum número tenha sido inserido
+        printf("Nenhum valor inserido. Impossível calcular a média.\n");
+    }
+
+    return 0;
+}
