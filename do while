@@ -1,0 +1,67 @@
+#include <stdio.h>
+
+int main() {
+    int opcao;
+    int idade, maior_idade = 0, menor_idade = 999, cont_mulheres_salario = 0;
+    char sexo;
+    float salario, soma_salarios = 0.0;
+    int quantidade_pessoas = 0;
+
+    do {
+        printf("\nCódigo | Descrição\n");
+        printf("-------|--------------\n");
+        printf("1      | Adicionar pessoa\n");
+        printf("2      | Exibir resultados e sair\n");
+        printf("Escolha uma opção: ");
+        scanf("%d", &opcao);
+
+        switch (opcao) {
+            case 1:
+                printf("Informe a idade: ");
+                scanf("%d", &idade);
+
+                if (idade > maior_idade) {
+                    maior_idade = idade;
+                }
+
+                if (idade < menor_idade) {
+                    menor_idade = idade;
+                }
+
+                printf("Informe o sexo (M/F): ");
+                scanf(" %c", &sexo);
+
+                printf("Informe o salário: ");
+                scanf("%f", &salario);
+
+                if (sexo == 'F' && salario >= 5000.0) {
+                    cont_mulheres_salario++;
+                }
+
+                soma_salarios += salario;
+                quantidade_pessoas++;
+                break;
+
+            case 2:
+                if (quantidade_pessoas > 0) {
+                    float media_salario = soma_salarios / quantidade_pessoas;
+
+                    printf("\nResultados:\n");
+                    printf("Média de salário do grupo: %.2f\n", media_salario);
+                    printf("Maior idade do grupo: %d\n", maior_idade);
+                    printf("Menor idade do grupo: %d\n", menor_idade);
+                    printf("Quantidade de mulheres com salário >= R$ 5.000,00: %d\n", cont_mulheres_salario);
+                } else {
+                    printf("\nNenhum dado foi inserido.\n");
+                }
+
+                break;
+
+            default:
+                printf("\nOpção inválida. Escolha novamente.\n");
+        }
+
+    } while (opcao != 2);
+
+    return 0;
+}
