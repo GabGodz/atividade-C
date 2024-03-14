@@ -4,19 +4,27 @@ int main() {
     // Definindo o tamanho do vetor para armazenar as notas
     int tamanho = 3;
     float notas[tamanho];
+    float soma = 0;
 
     // Lendo as notas fornecidas pelo usuário e armazenando no vetor
     printf("Digite as 3 notas:\n");
     for (int i = 0; i < tamanho; i++) {
         printf("Nota %d: ", i + 1);
         scanf("%f", &notas[i]);
+        soma += notas[i]; // Somando as notas para calcular a média posteriormente
     }
+
+    // Calculando a média das notas
+    float media = soma / tamanho;
 
     // Mostrando as notas armazenadas no vetor
     printf("\nNotas digitadas:\n");
     for (int i = 0; i < tamanho; i++) {
         printf("Nota %d: %.2f\n", i + 1, notas[i]);
     }
+
+    // Mostrando a média das notas
+    printf("\nMédia das notas: %.2f\n", media);
 
     return 0;
 }
