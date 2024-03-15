@@ -1,0 +1,36 @@
+#include <stdio.h>
+
+int main() {
+    // Definição do tamanho do vetor para armazenar os números
+    int tamanho = 6;
+    int numeros[tamanho];
+    int pares = 0, impares = 0;
+
+    // Lendo os números fornecidos pelo usuário e armazenando no vetor
+    printf("Digite 6 números:\n");
+    for (int i = 0; i < tamanho; i++) {
+        printf("Número %d: ", i + 1);
+        scanf("%d", &numeros[i]);
+    }
+
+    // Verificando se os números são pares ou ímpares
+    for (int i = 0; i < tamanho; i++) {
+        if (numeros[i] % 2 == 0) {
+            pares++;
+        } else {
+            impares++;
+        }
+    }
+
+    // Mostrando os números informados pelo usuário
+    printf("\nNúmeros informados:\n");
+    for (int i = 0; i < tamanho; i++) {
+        printf("%d ", numeros[i]);
+    }
+
+    // Mostrando a quantidade de números pares e ímpares
+    printf("\n\nQuantidade de números pares: %d\n", pares);
+    printf("Quantidade de números ímpares: %d\n", impares);
+
+    return 0;
+}
