@@ -1,0 +1,44 @@
+#include <stdio.h>
+
+int main() {
+    // Definição do tamanho do vetor para armazenar as notas
+    int tamanho = 4;
+    float notas[tamanho];
+    float soma = 0;
+
+    // Lendo as notas fornecidas pelo usuário e armazenando no vetor
+    printf("Digite as 4 notas (entre 0 e 10):\n");
+    for (int i = 0; i < tamanho; i++) {
+        do {
+            printf("Nota %d: ", i + 1);
+            scanf("%f", &notas[i]);
+            if (notas[i] < 0 || notas[i] > 10) {
+                printf("Nota inválida! Por favor, digite uma nota entre 0 e 10.\n");
+            }
+        } while (notas[i] < 0 || notas[i] > 10);
+        soma += notas[i]; // Somando as notas para calcular a média posteriormente
+    }
+
+    // Calculando a média das notas
+    float media = soma / tamanho;
+
+    // Mostrando as 4 notas armazenadas no vetor
+    printf("\nNotas digitadas:\n");
+    for (int i = 0; i < tamanho; i++) {
+        printf("Nota %d: %.2f\n", i + 1, notas[i]);
+    }
+
+    // Mostrando a média das notas
+    printf("\nMédia das notas: %.2f\n", media);
+
+    // Verificando a situação do aluno
+    if (media >= 7) {
+        printf("Situação: Aprovado\n");
+    } else if (media >= 5) {
+        printf("Situação: Recuperação\n");
+    } else {
+        printf("Situação: Reprovado\n");
+    }
+
+    return 0;
+}
