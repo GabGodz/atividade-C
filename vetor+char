@@ -1,0 +1,25 @@
+#include <stdio.h>
+
+int main() {
+    // Definição do tamanho dos vetores para armazenar os nomes e idades
+    int tamanho = 5;
+    char nomes[tamanho][50];
+    int idades[tamanho];
+
+    // Lendo os nomes e idades fornecidos pelo usuário e armazenando nos vetores
+    printf("Digite os nomes e idades das 5 pessoas:\n");
+    for (int i = 0; i < tamanho; i++) {
+        printf("Nome da pessoa %d: ", i + 1);
+        scanf("%s", nomes[i]);
+        printf("Idade da pessoa %d: ", i + 1);
+        scanf("%d", &idades[i]);
+    }
+
+    // Mostrando os nomes e idades de cada pessoa
+    printf("\nLista de nomes e idades:\n");
+    for (int i = 0; i < tamanho; i++) {
+        printf("Nome: %s, Idade: %d\n", nomes[i], idades[i]);
+    }
+
+    return 0;
+}
