@@ -1,0 +1,29 @@
+#include <stdio.h>
+
+#define TAMANHO_VETOR 6
+
+int main() {
+    int vetor[TAMANHO_VETOR];
+    int i;
+
+    // Recebendo os valores do usuário e armazenando no vetor
+    printf("Digite %d numeros inteiros, positivos e pares:\n", TAMANHO_VETOR);
+    for (i = 0; i < TAMANHO_VETOR; i++) {
+        do {
+            scanf("%d", &vetor[i]);
+            // Verificando se o valor é positivo e par
+            if (vetor[i] <= 0 || vetor[i] % 2 != 0) {
+                printf("Valor invalido! Digite um numero inteiro, positivo e par.\n");
+            }
+        } while (vetor[i] <= 0 || vetor[i] % 2 != 0);
+    }
+
+    // Mostrando os valores lidos na ordem inversa
+    printf("Valores lidos na ordem inversa:\n");
+    for (i = TAMANHO_VETOR - 1; i >= 0; i--) {
+        printf("%d ", vetor[i]);
+    }
+    printf("\n");
+
+    return 0;
+}
