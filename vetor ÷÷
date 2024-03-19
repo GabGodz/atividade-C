@@ -1,0 +1,27 @@
+#include <stdio.h>
+
+#define TAMANHO_VETOR 5
+
+int main() {
+    int vetor[TAMANHO_VETOR];
+    int i;
+
+    // Recebendo os valores do usuário e armazenando no vetor
+    printf("Digite %d numeros:\n", TAMANHO_VETOR);
+    for (i = 0; i < TAMANHO_VETOR; i++) {
+        scanf("%d", &vetor[i]);
+        // Verificando se o valor é negativo e atribuindo 0 se for
+        if (vetor[i] < 0) {
+            vetor[i] = 0;
+        }
+    }
+
+    // Listando os valores do vetor
+    printf("Valores do vetor:\n");
+    for (i = 0; i < TAMANHO_VETOR; i++) {
+        printf("%d ", vetor[i]);
+    }
+    printf("\n");
+
+    return 0;
+}
