@@ -1,0 +1,33 @@
+#include <stdio.h>
+
+int main() {
+    // Definição do tamanho do vetor
+    int tamanho = 10;
+    // Declaração do vetor de números reais
+    float numeros[tamanho];
+    // Variáveis para armazenar a quantidade de números negativos e a soma dos positivos
+    int negativos = 0;
+    float soma_positivos = 0;
+
+    // Preenchendo o vetor com números fornecidos pelo usuário
+    printf("Digite 10 números reais:\n");
+    for (int i = 0; i < tamanho; i++) {
+        printf("Número %d: ", i + 1);
+        scanf("%f", &numeros[i]);
+    }
+
+    // Calculando a quantidade de números negativos e a soma dos positivos
+    for (int i = 0; i < tamanho; i++) {
+        if (numeros[i] < 0) {
+            negativos++;
+        } else {
+            soma_positivos += numeros[i];
+        }
+    }
+
+    // Mostrando os resultados
+    printf("\nQuantidade de números negativos: %d\n", negativos);
+    printf("Soma dos números positivos: %.2f\n", soma_positivos);
+
+    return 0;
+}
