@@ -29,6 +29,20 @@ int main() {
             printf("\n");
         }
 
+   //ADICIONAR SCORE
+   
+   //ADICIONAR OPONENTE
+   
+   //REMOVER ATUALIZAÇÃO DE TELA
+   
+   //ADICIONAR ICONE DIFERENTE PARA BOLA E JOGADORES
+   
+   //AUMENTAR HITBOX DOS JOGADORES 
+   
+   //MENSAGEM AO PONTUAR MAIS DE DUAS VEZES SEGUIDAS 
+   
+   //AUMENTAR COLUNAS E LINHAS 
+   
         // Verifica a entrada do usuário
         if (_kbhit()) {
             input = _getch();
