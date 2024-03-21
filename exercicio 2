@@ -1,0 +1,39 @@
+#include <stdio.h>
+
+int main() {
+    int numero;
+    int qtdParesPositivos = 0, qtdImparesPositivos = 0, qtdPositivos = 0, qtdNegativos = 0, qtdTotal = 0;
+
+    printf("Digite numeros inteiros (insira 0 para sair):\n");
+
+    // Loop para ler os números até que seja inserido 0
+    do {
+        scanf("%d", &numero);
+
+        // Verifica se o número é positivo, negativo ou zero
+        if (numero > 0) {
+            qtdPositivos++;
+            if (numero % 2 == 0) {
+                qtdParesPositivos++;
+            } else {
+                qtdImparesPositivos++;
+            }
+        } else if (numero < 0) {
+            qtdNegativos++;
+        }
+
+        qtdTotal++;
+    } while (numero != 0);
+
+    // Decrementa 1 da quantidade total para excluir o 0 inserido para sair
+    qtdTotal--;
+
+    // Mostrando os resultados
+    printf("Quantidade de numeros positivos que sao pares: %d\n", qtdParesPositivos);
+    printf("Quantidade de numeros positivos que sao impares: %d\n", qtdImparesPositivos);
+    printf("Quantidade de numeros positivos: %d\n", qtdPositivos);
+    printf("Quantidade de numeros negativos: %d\n", qtdNegativos);
+    printf("Quantidade total de numeros inseridos: %d\n", qtdTotal);
+
+    return 0;
+}
