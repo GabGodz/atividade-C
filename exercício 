@@ -1,0 +1,38 @@
+#include <stdio.h>
+
+int main() {
+    int numeros[5];
+    int qtdPares = 0, qtdImpares = 0, qtdPositivos = 0, qtdNegativos = 0;
+    int i;
+
+    // Recebendo os valores do usuário e armazenando no vetor
+    printf("Digite 5 numeros inteiros:\n");
+    for (i = 0; i < 5; i++) {
+        scanf("%d", &numeros[i]);
+    }
+
+    // Analisando os números e contando as quantidades
+    for (i = 0; i < 5; i++) {
+        // Verificando se o número é par ou ímpar
+        if (numeros[i] % 2 == 0) {
+            qtdPares++;
+        } else {
+            qtdImpares++;
+        }
+        // Verificando se o número é positivo ou negativo
+        if (numeros[i] > 0) {
+            qtdPositivos++;
+        } else if (numeros[i] < 0) {
+            qtdNegativos++;
+        }
+    }
+
+    // Mostrando os resultados
+    printf("Quantidade de numeros pares: %d\n", qtdPares);
+    printf("Quantidade de numeros impares: %d\n", qtdImpares);
+    printf("Quantidade de numeros positivos: %d\n", qtdPositivos);
+    printf("Quantidade de numeros negativos: %d\n", qtdNegativos);
+    printf("Quantidade total de numeros inseridos: %d\n", 5);
+
+    return 0;
+}
