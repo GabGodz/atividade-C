@@ -1,0 +1,61 @@
+#include <stdio.h>
+
+int main() {
+    int numeros[5];
+    int qtdPares = 0, qtdImpares = 0, qtdPositivos = 0, qtdNegativos = 0, qtdTotal = 5;
+    int maior, menor;
+    int somaPares = 0, somaImpares = 0, somaTotal = 0;
+
+    printf("Digite 5 numeros inteiros:\n");
+
+    // Ler os 5 números e realizar as contagens e cálculos
+    for (int i = 0; i < 5; i++) {
+        scanf("%d", &numeros[i]);
+        somaTotal += numeros[i];
+
+        // Verifica se o número é par ou ímpar
+        if (numeros[i] % 2 == 0) {
+            qtdPares++;
+            somaPares += numeros[i];
+        } else {
+            qtdImpares++;
+            somaImpares += numeros[i];
+        }
+
+        // Verifica se o número é positivo ou negativo
+        if (numeros[i] > 0) {
+            qtdPositivos++;
+        } else if (numeros[i] < 0) {
+            qtdNegativos++;
+        }
+
+        // Verifica o maior e o menor número
+        if (i == 0 || numeros[i] > maior) {
+            maior = numeros[i];
+        }
+        if (i == 0 || numeros[i] < menor) {
+            menor = numeros[i];
+        }
+    }
+
+    // Mostrar os resultados
+    printf("Quantidade de numeros pares: %d\n", qtdPares);
+    printf("Quantidade de numeros impares: %d\n", qtdImpares);
+    printf("Quantidade de numeros positivos: %d\n", qtdPositivos);
+    printf("Quantidade de numeros negativos: %d\n", qtdNegativos);
+    printf("Quantidade total de numeros inseridos: %d\n", qtdTotal);
+    printf("Maior numero: %d\n", maior);
+    printf("Menor numero: %d\n", menor);
+    printf("Media de numeros pares: %.2f\n", (float)somaPares / qtdPares);
+    printf("Media de numeros impares: %.2f\n", (float)somaImpares / qtdImpares);
+    printf("Media de todos os numeros: %.2f\n", (float)somaTotal / qtdTotal);
+
+    // Mostrar os números lidos na ordem inversa
+    printf("Numeros na ordem inversa: ");
+    for (int i = 4; i >= 0; i--) {
+        printf("%d ", numeros[i]);
+    }
+    printf("\n");
+
+    return 0;
+}
