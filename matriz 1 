@@ -1,0 +1,28 @@
+#include <stdio.h>
+
+int main() {
+    // Declaração da matriz para armazenar as notas dos alunos
+    int notas[2][3];
+
+    // Vetor com os nomes dos alunos
+    char nomes[2][20] = {"Marta Silva", "João Santos"};
+
+    // Ler as notas dos alunos
+    for (int i = 0; i < 2; i++) {
+        printf("Notas de %s:\n", nomes[i]);
+        for (int j = 0; j < 3; j++) {
+            printf("%da nota: ", j + 1);
+            scanf("%d", &notas[i][j]);
+        }
+    }
+
+    // Mostrar as notas dos alunos
+    for (int i = 0; i < 2; i++) {
+        printf("\n%s:\n", nomes[i]);
+        for (int j = 0; j < 3; j++) {
+            printf("%da nota: %d\n", j + 1, notas[i][j]);
+        }
+    }
+
+    return 0;
+}
