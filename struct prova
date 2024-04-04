@@ -1,0 +1,96 @@
+#include <stdio.h>
+#include <stdlib.h> // Para usar a função system("clear") ou system("cls") para limpar a tela
+
+// Estrutura para armazenar os dados do usuário
+struct Usuario {
+    char nome[50];
+    int idade;
+    char email[50];
+    char telefone[15];
+};
+
+// Função para mostrar o nome e idade do usuário
+void mostrarNomeIdade(struct Usuario usuario) {
+    printf("Nome: %s\n", usuario.nome);
+    printf("Idade: %d\n", usuario.idade);
+}
+
+// Função para mostrar o nome e e-mail do usuário
+void mostrarNomeEmail(struct Usuario usuario) {
+    printf("Nome: %s\n", usuario.nome);
+    printf("E-mail: %s\n", usuario.email);
+}
+
+// Função para mostrar o nome e telefone do usuário
+void mostrarNomeTelefone(struct Usuario usuario) {
+    printf("Nome: %s\n", usuario.nome);
+    printf("Telefone: %s\n", usuario.telefone);
+}
+
+// Função para mostrar todas as informações do usuário
+void mostrarTodasInformacoes(struct Usuario usuario) {
+    printf("Nome: %s\n", usuario.nome);
+    printf("Idade: %d\n", usuario.idade);
+    printf("E-mail: %s\n", usuario.email);
+    printf("Telefone: %s\n", usuario.telefone);
+}
+
+int main() {
+    struct Usuario usuario;
+
+    // Solicitar os dados do usuário
+    printf("Digite seu nome: ");
+    scanf("%s", usuario.nome);
+    printf("Digite sua idade: ");
+    scanf("%d", &usuario.idade);
+    printf("Digite seu e-mail: ");
+    scanf("%s", usuario.email);
+    printf("Digite seu telefone: ");
+    scanf("%s", usuario.telefone);
+
+    int opcao;
+    do {
+        // Limpar a tela
+        system("clear");
+
+        // Exibir o menu
+        printf("Menu:\n");
+        printf("1 - Mostrar nome e idade\n");
+        printf("2 - Mostrar nome e e-mail\n");
+        printf("3 - Mostrar nome e telefone\n");
+        printf("4 - Mostrar todas as informações\n");
+        printf("0 - Sair do programa\n");
+        printf("Escolha uma opção: ");
+        scanf("%d", &opcao);
+
+        // Processar a opção escolhida pelo usuário
+        switch(opcao) {
+            case 1:
+                mostrarNomeIdade(usuario);
+                break;
+            case 2:
+                mostrarNomeEmail(usuario);
+                break;
+            case 3:
+                mostrarNomeTelefone(usuario);
+                break;
+            case 4:
+                mostrarTodasInformacoes(usuario);
+                break;
+            case 0:
+                printf("Saindo do programa...\n");
+                break;
+            default:
+                printf("Opção inválida. Tente novamente.\n");
+                break;
+        }
+
+        // Pausa para o usuário visualizar o resultado
+        printf("\nPressione Enter para continuar...");
+        getchar(); // Limpar o buffer do teclado
+        getchar(); // Aguardar o Enter
+
+    } while (opcao != 0);
+
+    return 0;
+}
